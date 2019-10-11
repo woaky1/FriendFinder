@@ -21,16 +21,14 @@ function scoreCompare (array) {
         // console.log("First number in that array: " + array[k][0]);
         // console.log("Array's length: " + array[k].length);
         var diffCollection = [];
+        dif = 0;
         for (var l = 0; l < array[k].length; l++) {
             console.log(array[k][l]);
             console.log(currentUserScore[k][l]);
-            
-            
-            var dif = Math.abs(array[k][l] - currentUserScore[k][l]);
+            dif += Math.abs(array[k][l] - currentUserScore[k][l]);
             console.log("dif" + dif);
-            
-            diffCollection.push(dif);
         }
+        diffCollection.push(dif);
         console.log(diffCollection);
     }
 }
