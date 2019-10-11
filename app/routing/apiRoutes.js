@@ -1,9 +1,9 @@
 var friends = require("../data/friends");
 
 module.exports = function (server) {
-    server.post("/api/userdata", function (req, res) {
+    server.post("/api/friends", function (req, res) {
         console.log(req.body);
-        userInfo.push(req.body);
+        friends.push(req.body);
         console.log("yes post is working");
         res.json(req.body)
 
