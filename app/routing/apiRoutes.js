@@ -19,13 +19,6 @@ module.exports = function (server) {
 function FriendInfo (userInfo) {
     this.name = userInfo.name;
     this.photoURL = userInfo.photoURL;
-    this.score = [parseInt(userInfo.q1), parseInt(userInfo.q2)];
-    // console.log(scoreRaw);
-    // this.score = []
-    // var scoreBox = [];
-    // for (var i = 0; i < scoreRaw.length; i++) {
-    //     scoreBox.push(parseInt(score[i]));
-    //     this.score.push(scoreBox);   
-    // }
+    this.score = [parseInt(userInfo.q1), parseInt(userInfo.q2), parseInt(userInfo.q3), parseInt(userInfo.q4), parseInt(userInfo.q5), parseInt(userInfo.q6), parseInt(userInfo.q7), parseInt(userInfo.q8), parseInt(userInfo.q9), parseInt(userInfo.q10)];
 
 }
