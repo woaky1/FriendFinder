@@ -1,9 +1,10 @@
 var friends = require("../data/friends");
-
+var score = [];
 module.exports = function (server) {
     server.post("/api/friends", function (req, res) {
         console.log(req.body);
-        friends.push(req.body);
+        var userInput = new FriendInfo(req.body);
+        friends.push(userInput);
         console.log("yes post is working");
         res.json(req.body)
 
@@ -14,3 +15,17 @@ module.exports = function (server) {
     })
 
 };
+
+function FriendInfo (userInfo) {
+    this.name = userInfo.name;
+    this.photoURL = userInfo.photoURL;
+    var scoreRaw = [userInfo.q1, userInfo.q2];
+    console.log(scoreRaw);
+    this.score = []
+    var scoreBox = [];
+    for (var i = 0; i < scoreRaw.length; i++) {
+        scoreBox.push(parseInt(score[i]));
+        this.score.push(scoreBox);   
+    }
+
+}
