@@ -10,7 +10,7 @@ module.exports = function (server) {
     });
 
     server.get("/api/friends", function (req, res) {
-        res.json(friends);
+        return res.json(friends);
     })
 
 };
