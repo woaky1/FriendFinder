@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Friend Finder Survey</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Survey Questions</h1>
+                <hr>
+                <form action="/api/friends" method="POST">
+                    <h2>About You</h2>
+                    <div class="form-group">
+                        <label for="name">Name &#40;Required&#41;</label>
+                        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name = "name">
+                    </div>
+                    <div class="form-group">
+                        <label for="photoURL">Password</label>
+                        <input type="text" class="form-control" id="photoURL" name = "photoURL">
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label for="q1"><h2>Question 1</h2><h5>The color green is very pretty.</h5></label>
+                        <select id="inputState" class="form-control col-md-4">
+                            <option selected>Choose a number.</option>
+                            <option value = "1">1 &#40;Strongly Disagree&#41;</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 &#40;Strongly Agree&#41;</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="q2"><h2>Question 2</h2><h5>I'm a cat person.</h5></label>
+                        <select id="inputState" class="form-control col-md-4">
+                            <option selected>Choose a number.</option>
+                            <option value="1">1 &#40;Strongly Disagree&#41;</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 &#40;Strongly Agree&#41;</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <hr>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <a href="">API Friends List</a> | <a href="">GitHub Repo</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
