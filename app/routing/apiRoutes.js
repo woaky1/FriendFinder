@@ -19,13 +19,13 @@ module.exports = function (server) {
 function FriendInfo (userInfo) {
     this.name = userInfo.name;
     this.photoURL = userInfo.photoURL;
-    var scoreRaw = [userInfo.q1, userInfo.q2];
-    console.log(scoreRaw);
-    this.score = []
-    var scoreBox = [];
-    for (var i = 0; i < scoreRaw.length; i++) {
-        scoreBox.push(parseInt(score[i]));
-        this.score.push(scoreBox);   
-    }
+    this.score = [parseInt(userInfo.q1), parseInt(userInfo.q2)];
+    // console.log(scoreRaw);
+    // this.score = []
+    // var scoreBox = [];
+    // for (var i = 0; i < scoreRaw.length; i++) {
+    //     scoreBox.push(parseInt(score[i]));
+    //     this.score.push(scoreBox);   
+    // }
 
 }
