@@ -14,6 +14,54 @@ var friends = [
             4,
             1
         ]
+    },
+    {
+        "name" : 'Wario',
+        "photoURL" : 'Wa',
+        "scores" : [
+            1,
+            1,
+            2,
+            5,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4
+        ]
+    },
+    {
+        "name": "Alex",
+        "photoURL": "Alex",
+        "scores": [
+            4,
+            3,
+            1,
+            5,
+            3,
+            5,
+            3,
+            5,
+            3,
+            3
+        ]
+    },
+    {
+        "name": "Paul",
+        "photoURL": "Paul",
+        "scores": [
+            2,
+            4,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1
+        ]
     }
 ]
 
