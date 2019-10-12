@@ -6,7 +6,7 @@ module.exports = function (server) {
         var userInput = new FriendInfo(req.body);
         friends.push(userInput);
         console.log("yes post is working");
-        res.json(req.body)
+        // res.json(200)
 
     });
 
