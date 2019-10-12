@@ -30,6 +30,38 @@ var friends = [
             4,
             4
         ]
+    },
+    {
+        "name": "Alex",
+        "photoURL": "Alex",
+        "scores": [
+            4,
+            3,
+            1,
+            5,
+            3,
+            5,
+            3,
+            5,
+            3,
+            3
+        ]
+    },
+    {
+        "name": "Paul",
+        "photoURL": "Paul",
+        "scores": [
+            2,
+            4,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1
+        ]
     }
 ]
 

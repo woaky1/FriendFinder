@@ -1,36 +1,33 @@
 var friends = require("./friends.js");
 
-var currentUserScore = [];
-currentUserScore.push(friends[friends.length - 1].scores);
-console.log("currentUserScore: " + currentUserScore);
-
-userScores = [];
-for (var j = 0; j < friends.length-1; j++) {
-    userScores.push(friends[j].scores);
-}
-
-console.log(userScores)
-
-// console.log(userScores[0]);
-// console.log(userScores[0][0]);
-
-
 function scoreCompare (array) {
-    for (var k = 0; k < array.length; k++) {
+    console.log(array);
+    var currentUserScore = [];
+    currentUserScore.push(array[array.length - 1].scores);
+    console.log(currentUserScore);
+
+    var userScores = [];
+    for (var j = 0; j < array.length-1; j++) {
+        userScores.push(array[j].scores);
+    }
+
+    console.log(userScores)
+    for (var k = 0; k < userScores.length; k++) {
         // console.log("Array going to second loop: " + array[k]);
         // console.log("First number in that array: " + array[k][0]);
         // console.log("Array's length: " + array[k].length);
         var diffCollection = [];
         dif = 0;
-        for (var l = 0; l < array[k].length; l++) {
-            console.log(array[k][l]);
-            console.log(currentUserScore[k][l]);
-            dif += Math.abs(array[k][l] - currentUserScore[k][l]);
+        for (var l = 0; l < userScores[k].length; l++) {
+            console.log(userScores[k][l]);
+            console.log(currentUserScore[0][l]);
+            dif += Math.abs(userScores[k][l] - currentUserScore[0][l]);
             console.log("dif" + dif);
         }
         diffCollection.push(dif);
         console.log(diffCollection);
     }
+
 }
 
-scoreCompare(userScores);
+scoreCompare(friends);
