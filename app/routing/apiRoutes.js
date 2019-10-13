@@ -1,12 +1,12 @@
 var friends = require("../data/friends");
 var score = [];
 module.exports = function (server) {
-    server.post("/api/friends", function (req, res) {
-        console.log(req.body);
-        var userInput = new FriendInfo(req.body);
+    server.post("/api/friends/:name/:photoURL/:q1/:q2/:q3/:q4/:q5/:q6/:q7/:q8/:q9/:q10", function (req, res) {
+        console.log(req.params);
+        var userInput = new FriendInfo(req.params);
         friends.push(userInput);
         console.log("yes post is working");
-        // res.json(200)
+        res.json(200)
 
     });
 
