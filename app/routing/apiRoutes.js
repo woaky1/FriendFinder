@@ -1,7 +1,7 @@
 var friends = require("../data/friends");
 var score = [];
 module.exports = function (server) {
-    server.post("/api/friends/:name", function (req, res) {
+    server.post("/api/friends/:name/:photoURL", function (req, res) {
         console.log(req.params);
         var userInput = new FriendInfo(req.params);
         friends.push(userInput);
