@@ -17,7 +17,7 @@ var friends = [
     },
     {
         "name" : 'Wario',
-        "photoURL" : 'Wa',
+        "photo" : 'Wa',
         "scores" : [
             1,
             1,
@@ -33,7 +33,7 @@ var friends = [
     },
     {
         "name": "Alex",
-        "photoURL": "Alex",
+        "photo": "Alex",
         "scores": [
             4,
             3,
@@ -49,7 +49,7 @@ var friends = [
     },
     {
         "name": "Paul",
-        "photoURL": "Paul",
+        "photo": "Paul",
         "scores": [
             2,
             4,

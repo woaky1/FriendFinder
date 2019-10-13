@@ -29,9 +29,13 @@ function scoreCompare (array) {
     var lowestDif = Math.min(...diffCollection);
     console.log(lowestDif);
     var bffIndex = diffCollection.indexOf(lowestDif);
-    console.log(friends[bffIndex].name);
+    var bffInfo = {
+        name: friends[bffIndex].name,
+        photo: friends[bffIndex].photo
+    };
+    return bffInfo;
     
     
 }
 
-scoreCompare(friends);
+module.exports = scoreCompare;
