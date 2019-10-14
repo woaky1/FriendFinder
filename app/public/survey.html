@@ -174,7 +174,6 @@
             var name = $("#name").val().trim();
             var photo = $("#photo").val().trim();
             var q1 = $("#q1").val();
-            console.log(q1);
             var q2 = $("#q2").val();
             var q3 = $("#q3").val();
             var q4 = $("#q4").val();
@@ -191,7 +190,11 @@
                 url: queryURL,
                 method: "POST"
             }).then(function(response) {
-                $(".modal-body").append(`<p>${response.name}</p><img src="${response.photo}">`)
+                $(".modal-body").append(`<p>${response.name}</p><img id="friendPhoto" src="${response.photo}">`)
+                // Learned this trick for handling broken images here: https://css-tricks.com/snippets/jquery/better-broken-image-handling/
+                $("img").on("error", function() {
+                    $("#friendPhoto").hide();
+                });
             })
         })
     </script>
