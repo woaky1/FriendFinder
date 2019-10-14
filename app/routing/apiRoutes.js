@@ -1,6 +1,6 @@
 var friends = require("../data/friends");
 var scoreCompare = require("../data/friendshipCalc");
-var score = [];
+
 module.exports = function (server) {
     server.post("/api/friends/:name/:photo/:q1/:q2/:q3/:q4/:q5/:q6/:q7/:q8/:q9/:q10", function (req, res) {
         if ((req.params.name && req.params.photo && req.params.q1 && req.params.q2 && req.params.q3 && req.params.q4 && req.params.q5 && req.params.q6 && req.params.q7 && req.params.q8 && req.params.q9 && req.params.q10) !== "null") {
