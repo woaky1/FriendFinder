@@ -24,7 +24,7 @@
                         <input type="text" class="form-control" id="photo" name = "photo">
                     </div>
                     <hr>
-                    
+                    <!-- Ideally, I would keep these questions in a seperate file and use a loop to create them via javascript so adding new questions would be easier. -->
                     <div class="form-group">
                         <label for="q1"><h2>Question 1</h2><h5>The color green is very pretty.</h5></label>
                         <select id="q1" class="form-control col-md-4" name = "q1">
@@ -146,7 +146,7 @@
                 <a href="/api/friends">API Friends List</a> | <a href="https://github.com/woaky1/FriendFinder">GitHub Repo</a>
             </div>
         </div>
-        <!-- Modal -->
+        <!-- This code is for the modal we use to return the friend search to the user. -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -165,13 +165,16 @@
             </div>
         </div>
     </div>
-
+<!-- These first three lines of script tags are related to bootstrap. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- The following script tag is where our front end javascript is taking place. Ideally, this would be put in a seprate file, but I had trouble getting the server to send it. Will hopefully fix that in the future. -->
     <script>
+        // This is an event listener to grab the user's responses.
         $("#submitButton").on("click", function (event) {
             event.preventDefault();
+            // Here we clear out any input errors we previously displayed.
             $("#error").empty();
             var name = $("#name").val().trim();
             var photo = $("#photo").val().trim();
@@ -186,6 +189,7 @@
             var q8 = $("#q8").val();
             var q9 = $("#q9").val();
             var q10 = $("#q10").val();
+            // Here we have a bit of validation to make sure we don't send any blank data to the backend.
             if (name && photo && q1 && q2 && q3 && q4 && q5 && q6 && q7 && q8 && q9 && q10) {
                 $("#submitButton").attr({"data-toggle": "modal", "data-target": "#exampleModal"})
                 // Learned about encodeURICompent from: https://stackoverflow.com/questions/1737935/what-is-the-recommended-way-to-pass-urls-as-url-parameters
@@ -203,6 +207,7 @@
                     });
                 })
         } else {
+            // If our validation failed, we give the user feedback on what they need to complete.
             if (!name) {
                 $("#error").append("<p>Please enter your name.</p>");
             }
