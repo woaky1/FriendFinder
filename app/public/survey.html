@@ -192,7 +192,7 @@
                 method: "POST"
             }).then(function(response) {
                 $(".modal-body").empty();
-                $(".modal-body").append(`<p>${response.name}</p><img id="friendPhoto" style="max-width: 100px; max-height: 200px;" src="${response.photo}">`)
+                $(".modal-body").append(`<p>${response.name}</p><img id="friendPhoto" style="max-width: 300px; max-height: 300px;" src="${response.photo}">`)
                 // Learned this trick for handling broken images here: https://css-tricks.com/snippets/jquery/better-broken-image-handling/
                 $("img").on("error", function() {
                     $("#friendPhoto").hide();
