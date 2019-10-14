@@ -39,7 +39,7 @@
                     <div class="form-group">
                         <label for="q2"><h2>Question 2</h2><h5>I'm a cat person.</h5></label>
                         <select id="q2" class="form-control col-md-4" name = "q2">
-                            <option selected>Choose a number.</option>
+                            <option disabled selected>Choose a number.</option>
                             <option value = "1">1 &#40;Strongly Disagree&#41;</option>
                             <option value = "2">2</option>
                             <option value = "3">3</option>
@@ -50,7 +50,7 @@
                     <div class="form-group">
                         <label for="q3"><h2>Question 3</h2><h5>I love pineapple on pizza.</h5></label>
                         <select id="q3" class="form-control col-md-4" name = "q3">
-                            <option selected>Choose a number.</option>
+                            <option disabled selected>Choose a number.</option>
                             <option value = "1">1 &#40;Strongly Disagree&#41;</option>
                             <option value = "2">2</option>
                             <option value = "3">3</option>
@@ -61,7 +61,7 @@
                     <div class="form-group">
                         <label for="q4"><h2>Question 4</h2><h5>A hot dog is a sandwich.</h5></label>
                         <select id="q4" class="form-control col-md-4" name = "q4">
-                            <option selected>Choose a number.</option>
+                            <option disabled selected>Choose a number.</option>
                             <option value = "1">1 &#40;Strongly Disagree&#41;</option>
                             <option value = "2">2</option>
                             <option value = "3">3</option>
@@ -72,7 +72,7 @@
                     <div class="form-group">
                         <label for="q5"><h2>Question 5</h2><h5>I love football!</h5></label>
                         <select id="q5" class="form-control col-md-4" name = "q5">
-                            <option selected>Choose a number.</option>
+                            <option disabled selected>Choose a number.</option>
                             <option value = "1">1 &#40;Strongly Disagree&#41;</option>
                             <option value = "2">2</option>
                             <option value = "3">3</option>
@@ -83,7 +83,7 @@
                     <div class="form-group">
                         <label for="q6"><h2>Question 6</h2><h5>You could say I'm outdoorsie.</h5></label>
                         <select id="q6" class="form-control col-md-4" name = "q6">
-                            <option selected>Choose a number.</option>
+                            <option disabled selected>Choose a number.</option>
                             <option value = "1">1 &#40;Strongly Disagree&#41;</option>
                             <option value = "2">2</option>
                             <option value = "3">3</option>
@@ -94,7 +94,7 @@
                     <div class="form-group">
                         <label for="q7"><h2>Question 7</h2><h5>I'm a night owl.</h5></label>
                         <select id="q7" class="form-control col-md-4" name = "q7">
-                            <option selected>Choose a number.</option>
+                            <option disabled selected>Choose a number.</option>
                             <option value = "1">1 &#40;Strongly Disagree&#41;</option>
                             <option value = "2">2</option>
                             <option value = "3">3</option>
@@ -105,7 +105,7 @@
                     <div class="form-group">
                         <label for="q8"><h2>Question 8</h2><h5>I know my way around a d20.</h5></label>
                         <select id="q8" class="form-control col-md-4" name = "q8">
-                            <option selected>Choose a number.</option>
+                            <option disabled selected>Choose a number.</option>
                             <option value = "1">1 &#40;Strongly Disagree&#41;</option>
                             <option value = "2">2</option>
                             <option value = "3">3</option>
@@ -116,7 +116,7 @@
                     <div class="form-group">
                         <label for="q9"><h2>Question 9</h2><h5>I'd rather be hot than cold.</h5></label>
                         <select id="q9" class="form-control col-md-4" name = "q9">
-                            <option selected>Choose a number.</option>
+                            <option disabled selected>Choose a number.</option>
                             <option value = "1">1 &#40;Strongly Disagree&#41;</option>
                             <option value = "2">2</option>
                             <option value = "3">3</option>
@@ -127,7 +127,7 @@
                     <div class="form-group">
                         <label for="q10"><h2>Question 10</h2><h5>I love to travel.</h5></label>
                         <select id="q10" class="form-control col-md-4" name = "q10">
-                            <option selected>Choose a number.</option>
+                            <option disabled selected>Choose a number.</option>
                             <option value = "1">1 &#40;Strongly Disagree&#41;</option>
                             <option value = "2">2</option>
                             <option value = "3">3</option>
@@ -184,13 +184,15 @@
             var q8 = $("#q8").val();
             var q9 = $("#q9").val();
             var q10 = $("#q10").val();
-            var queryURL = `/api/friends/${name}/${photo}/${q1}/${q2}/${q3}/${q4}/${q5}/${q6}/${q7}/${q8}/${q9}/${q10}`;
+            // Learned about encodeURICompent from: https://stackoverflow.com/questions/1737935/what-is-the-recommended-way-to-pass-urls-as-url-parameters
+            var queryURL = `/api/friends/${name}/${encodeURIComponent(photo)}/${q1}/${q2}/${q3}/${q4}/${q5}/${q6}/${q7}/${q8}/${q9}/${q10}`;
             console.log(queryURL);
             $.ajax({
                 url: queryURL,
                 method: "POST"
             }).then(function(response) {
-                $(".modal-body").append(`<p>${response.name}</p><img id="friendPhoto" src="${response.photo}">`)
+                $(".modal-body").empty();
+                $(".modal-body").append(`<p>${response.name}</p><img id="friendPhoto" style="max-width: 300px; max-height: 300px;" src="${response.photo}">`)
                 // Learned this trick for handling broken images here: https://css-tricks.com/snippets/jquery/better-broken-image-handling/
                 $("img").on("error", function() {
                     $("#friendPhoto").hide();
