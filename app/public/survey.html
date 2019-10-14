@@ -136,6 +136,7 @@
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary" id = "submitButton">Submit</button>
+                    <div class="mt-3 text-danger" id="error"></div>
                     <hr>
                 </form>
             </div>
@@ -173,13 +174,7 @@
             event.preventDefault();
             $("#error").empty();
             var name = $("#name").val().trim();
-            if (name === null) {
-                $("#error").append("<p>Please enter your name.</p>")
-            }
             var photo = $("#photo").val().trim();
-            if (photo === null) {
-                $("#error").append("Please provide a link to your photo.")
-            }
             var q1 = $("#q1").val();
             var q2 = $("#q2").val();
             var q3 = $("#q3").val();
@@ -207,7 +202,19 @@
                         $("#friendPhoto").hide();
                     });
                 })
-        }})
+        } else {
+            if (!name) {
+                $("#error").append("<p>Please enter your name.</p>");
+            }
+            if (!photo) {
+                $("#error").append("<p>Please provide a link to your photo.</p>");
+            }
+            if (!q1 || !q2 || !q3 || !q4 || !q5 || !q6 || !q7 || !q8 || !q9 || !q10) {
+                $("#error").append("<p>Please answer all survey questions.</p>")
+            }
+
+        }
+    })
     </script>
 </body>
 </html>
