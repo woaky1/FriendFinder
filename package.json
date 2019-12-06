@@ -1,5 +1,5 @@
 {
-  "name": "FriendFinder",
+  "name": "friendfinder",
   "version": "1.0.0",
   "description": "A friend compatibility app made as homework at Northwestern's Coding Boot Camp",
   "main": "server.js",
