@@ -32,7 +32,7 @@ This app is made of files that can be grouped into four categories.
 
 ## Tech Used
 
-This app is built using Node.js and the Express node package.
+This app is built using Node.js and Express.js. I also used Bootstrap to help with front-end layout.
 
 ## About Me
 
